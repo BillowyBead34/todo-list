@@ -8,12 +8,13 @@ window.onload = () => {
 document.getElementById('SignInBtn').addEventListener('click', () => {
   const data = document.getElementById('NameTxt').value;
   const name = data.trim();
+
   // Check the input of the user
   if (name == '') {
     errorContainer.innerHTML = 'Please enter your name';
     return;
   } else if (name.length < 4) {
-    errorContainer.innerHTML = 'The name must be more thar 3 chars';
+    errorContainer.innerHTML = 'The name must be more than 3 chars';
     return;
   } else if (name.length > 14) {
     errorContainer.innerHTML = 'The name must be between 4 and 14 chars';
@@ -21,6 +22,7 @@ document.getElementById('SignInBtn').addEventListener('click', () => {
   } else {
     errorContainer.innerHTML = '';
   }
+
   localStorage.setItem('User', name);
   window.location.href = './todo.html';
 });
